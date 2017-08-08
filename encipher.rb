@@ -1,7 +1,7 @@
 require 'digest'
 
 puts "Введите слово или фразу для шифрования:"
-tekst = STDIN.gets.chomp
+text = STDIN.gets.chomp
 
 puts "Каким способом зашифровать:
 1. MD5
@@ -9,11 +9,9 @@ puts "Каким способом зашифровать:
 user_input = STDIN.gets.chomp
 
 if user_input == "1"
-  puts md5 = Digest::MD5.new
-  md5.digest 'tekst'
+  puts Digest::MD5.hexdigest(text)
 end
 
 if user_input == "2"
-  puts sha1 = Digest::SHA1.new
-  sha1.digest 'tekst'
+  puts Digest::SHA1.hexdigest(text)
 end
